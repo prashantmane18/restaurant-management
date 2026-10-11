@@ -1,0 +1,177 @@
+.restaurant-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: #f4f6f8;
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header p {
+  margin-top: 5px;
+  color: #666;
+}
+
+
+/* Add Button */
+
+.add-button {
+  display: inline-block;
+  padding: 12px 18px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* Restaurant Grid */
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+
+/* Restaurant Card */
+
+.restaurant-card {
+  display: block;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.restaurant-card p {
+  margin: 12px 0;
+  color: #444;
+}
+
+
+/* Actions */
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+/* Edit Button */
+
+.edit-button {
+  padding: 9px 15px;
+  border-radius: 5px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background: #1d4ed8;
+}
+
+
+/* Delete Button */
+
+.delete-button {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #dc2626;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #b91c1c;
+}
+
+
+/* Error Message */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+/* Loading Message */
+
+.loading-message {
+  padding: 30px;
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+}
+
+
+/* Empty State */
+
+.empty-message {
+  padding: 50px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.empty-message h2 {
+  margin-top: 0;
+}
+
+.empty-message p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .restaurant-container {
+    padding: 20px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

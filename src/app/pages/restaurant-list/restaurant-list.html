@@ -1,0 +1,81 @@
+<div class="restaurant-container">
+
+  <div class="header">
+    <h1>Restaurants</h1>
+
+    <a
+      routerLink="/restaurants/add"
+      class="add-button">
+      + Add Restaurant
+    </a>
+  </div>
+
+  @if (isLoading()) {
+
+    <p class="loading-message">
+      Loading restaurants...
+    </p>
+
+  } @else if (errorMessage) {
+
+    <p class="error-message">
+      {{ errorMessage }}
+    </p>
+
+  } @else if (restaurants.length === 0) {
+
+    <p class="empty-message">
+      No restaurants found.
+    </p>
+
+  } @else {
+
+    <div class="restaurant-grid">
+
+      @for (restaurant of restaurants; track restaurant.id) {
+
+        <div class="restaurant-card">
+
+          <h2>{{ restaurant.name }}</h2>
+
+          <p>
+            <strong>Address:</strong>
+            {{ restaurant.address }}
+          </p>
+
+          <p>
+            <strong>Best Dish:</strong>
+            {{ restaurant.bestDish }}
+          </p>
+
+          <p>
+            <strong>Rating:</strong>
+            {{ restaurant.rating }}
+          </p>
+
+          <div class="actions">
+
+  <a
+    [routerLink]="['/restaurants/edit', restaurant.id]"
+    class="edit-button">
+    Edit
+  </a>
+
+  <button
+    type="button"
+    class="delete-button"
+    (click)="deleteRestaurant(restaurant.id)">
+    Delete
+  </button>
+
+</div>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+</div>

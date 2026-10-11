@@ -1,0 +1,53 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h2>Restaurant Management</h2>
+    <h3>Login</h3>
+
+    <form>
+
+      <div class="form-group">
+        <label>Username</label>
+
+        <input
+          type="text"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="Enter username"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+
+        <input
+          type="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Enter password"
+        />
+      </div>
+
+      @if (errorMessage) {
+        <p class="error-message">
+          {{ errorMessage }}
+        </p>
+      }
+
+      <button
+        type="button"
+        (click)="login()">
+        Login
+      </button>
+
+    </form>
+
+    <p>
+      Don't have an account?
+      <a routerLink="/register">Register</a>
+    </p>
+
+  </div>
+
+</div>
