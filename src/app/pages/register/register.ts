@@ -42,9 +42,7 @@ export class Register {
 
     this.auth.register(this.username, this.password).subscribe({
       next: (response) => {
-        console.log('Registration successful:', response);
-
-        this.message = 'Registration successful! Redirecting to login...';
+        this.message = response.message;
 
         setTimeout(() => {
           this.router.navigate(['/login']);

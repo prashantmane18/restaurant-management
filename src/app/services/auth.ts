@@ -2,6 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface RegisterResponse {
+  id: string;
+  username: string;
+  role: string;
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -11,15 +18,12 @@ export class Auth {
 
   constructor(private http: HttpClient) {}
 
-  register(username: string, password: string): Observable<string> {
-    return this.http.post(
+  register(username: string, password: string): Observable<RegisterResponse> {
+    return this.http.post<RegisterResponse>(
       `${this.baseUrl}/auth/register`,
       {
-        username: username,
-        password: password
-      },
-      {
-        responseType: 'text'
+        username,
+        password
       }
     );
   }
